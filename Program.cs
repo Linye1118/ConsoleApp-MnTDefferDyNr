@@ -21,6 +21,7 @@ namespace ConsoleApp_MnTDefferDyNr
             Console.WriteLine("******Program Start******\n");
             LoadData();
             FindMinDifferDy();
+            Console.WriteLine("*******Program End*******\n");
         }
 
         private static void FindMinDifferDy()
@@ -29,9 +30,13 @@ namespace ConsoleApp_MnTDefferDyNr
             var minDiffer = monthTemps.Min(DayTemp => DayTemp.MxT-DayTemp.MnT);
             //selected the value/values equals min value
             var minDifferDys = monthTemps.Where(x => x.MxT - x.MnT == minDiffer).Select(d => d.Dy);
+            List<int> result = new List<int>(minDifferDys);
+            
             //construct result as a string
-            string allMinDifferDys = string.Join(" ", minDifferDys);           
+            string allMinDifferDys = string.Join(" ", minDifferDys);
+            Console.WriteLine(result.Count() + " result(s)");
             Console.WriteLine("Day number with the minimum difference in temperature: " + allMinDifferDys);
+            
         }
 
         private static void LoadData()
