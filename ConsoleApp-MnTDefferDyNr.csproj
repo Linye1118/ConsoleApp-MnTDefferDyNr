@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>ConsoleApp_MnTDefferDyNr</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="weather.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="weather.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="iTextSharp" Version="5.5.13.2" />
+  </ItemGroup>
+
+</Project>
